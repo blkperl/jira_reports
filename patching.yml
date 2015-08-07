@@ -1,0 +1,16 @@
+---
+parent: OP-123456
+stages:
+  - En-masse Patching — NN1
+  - En-masse Patching — NN2
+  - En-masse Patching — ACE - ap-southeast-2
+  - En-masse Patching — ACE - ap-southeast-1
+  - En-masse Patching — ACE - ap-northeast-1
+  - En-masse Patching — ACE - eu-west-1
+  - En-masse Patching — ACE - us-west-2
+  - En-masse Patching — ACE - us-east-1
+  - En-masse Patching — Search - ap-southeast-2
+  - En-masse Patching — Search - ap-southeast-1
+  - En-masse Patching — Search - eu-west-1
+  - En-masse Patching — Search - us-west-2
+  - En-masse Patching — Search - us-east-1
