@@ -13,7 +13,8 @@ from tabulate import tabulate
 
 @click.command()
 @click.argument("project")
-def go(project):
+@click.option("--created_date", nargs=2, default=("-30d", "0m"))
+def go(project, created_date):
     username = os.environ.get('JIRA_USER')
     jira_url = os.environ.get('JIRA_URL')
 
@@ -31,8 +32,8 @@ def go(project):
 
     query = """project = %s AND
                status NOT IN (Done, Rejected) AND
-               createdDate >=-30d
-               ORDER BY key""" % (project,)
+               createdDate >= "%s" AND createdDate < "%s"
+               ORDER BY key""" % (project, created_date[0], created_date[1])
 
     headers=['ISSUE','TYPE','PRIORITY','# OPS TICKETS','TOTAL TIME (hours)','CUSTOMER']
 
